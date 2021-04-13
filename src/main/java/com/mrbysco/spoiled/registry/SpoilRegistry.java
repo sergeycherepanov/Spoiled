@@ -40,42 +40,49 @@ public class SpoilRegistry {
                     defaultItemstack = new ItemStack(item);
                 }
             }
-            registerSpoiling(new SpoilInfo("apple", new ItemStack(Items.APPLE), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("baked_potato", new ItemStack(Items.BAKED_POTATO), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("beef", new ItemStack(Items.BEEF), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("beetroot", new ItemStack(Items.BEETROOT), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("beetroot_soup", new ItemStack(Items.BEETROOT_SOUP), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("bread", new ItemStack(Items.BREAD), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("carrot", new ItemStack(Items.CARROT), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("chicken", new ItemStack(Items.CHICKEN), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("chorus_fruit", new ItemStack(Items.CHORUS_FRUIT), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cod", new ItemStack(Items.COD), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_beef", new ItemStack(Items.COOKED_BEEF), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_chicken", new ItemStack(Items.COOKED_CHICKEN), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_cod", new ItemStack(Items.COOKED_COD), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_mutton", new ItemStack(Items.COOKED_MUTTON), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_porkchop", new ItemStack(Items.COOKED_PORKCHOP), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_rabbit", new ItemStack(Items.COOKED_RABBIT), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cooked_salmon", new ItemStack(Items.COOKED_SALMON), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("cookie", new ItemStack(Items.COOKIE), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("dried_kelp", new ItemStack(Items.DRIED_KELP), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("golden_apple", new ItemStack(Items.GOLDEN_APPLE), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("golden_carrot", new ItemStack(Items.GOLDEN_CARROT), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("melon_slice", new ItemStack(Items.MELON_SLICE), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("mushroom_stew", new ItemStack(Items.MUSHROOM_STEW), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("mutton", new ItemStack(Items.MUTTON), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("poisonous_potato", new ItemStack(Items.POISONOUS_POTATO), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("porkchop", new ItemStack(Items.PORKCHOP), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("potato", new ItemStack(Items.POTATO), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("pufferfish", new ItemStack(Items.PUFFERFISH), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("pumpkin_pie", new ItemStack(Items.PUMPKIN_PIE), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("rabbit", new ItemStack(Items.RABBIT), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("rabbit_stew", new ItemStack(Items.RABBIT_STEW), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("salmon", new ItemStack(Items.SALMON), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("spider_eye", new ItemStack(Items.SPIDER_EYE), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("suspicious_stew", new ItemStack(Items.SUSPICIOUS_STEW), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("sweet_berries", new ItemStack(Items.SWEET_BERRIES), defaultItemstack, defaultTime));
-            registerSpoiling(new SpoilInfo("tropical_fish", new ItemStack(Items.TROPICAL_FISH), defaultItemstack, defaultTime));
+
+            for(Item foundItem : ForgeRegistries.ITEMS.getValues()) {
+                if(foundItem.isFood()) {
+                    registerSpoiling(new SpoilInfo(foundItem.getTranslationKey(), new ItemStack(foundItem), defaultItemstack, defaultTime));
+                }
+            }
+
+//            registerSpoiling(new SpoilInfo("apple", new ItemStack(Items.APPLE), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("baked_potato", new ItemStack(Items.BAKED_POTATO), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("beef", new ItemStack(Items.BEEF), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("beetroot", new ItemStack(Items.BEETROOT), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("beetroot_soup", new ItemStack(Items.BEETROOT_SOUP), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("bread", new ItemStack(Items.BREAD), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("carrot", new ItemStack(Items.CARROT), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("chicken", new ItemStack(Items.CHICKEN), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("chorus_fruit", new ItemStack(Items.CHORUS_FRUIT), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cod", new ItemStack(Items.COD), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_beef", new ItemStack(Items.COOKED_BEEF), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_chicken", new ItemStack(Items.COOKED_CHICKEN), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_cod", new ItemStack(Items.COOKED_COD), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_mutton", new ItemStack(Items.COOKED_MUTTON), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_porkchop", new ItemStack(Items.COOKED_PORKCHOP), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_rabbit", new ItemStack(Items.COOKED_RABBIT), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cooked_salmon", new ItemStack(Items.COOKED_SALMON), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("cookie", new ItemStack(Items.COOKIE), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("dried_kelp", new ItemStack(Items.DRIED_KELP), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("golden_apple", new ItemStack(Items.GOLDEN_APPLE), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("golden_carrot", new ItemStack(Items.GOLDEN_CARROT), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("melon_slice", new ItemStack(Items.MELON_SLICE), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("mushroom_stew", new ItemStack(Items.MUSHROOM_STEW), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("mutton", new ItemStack(Items.MUTTON), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("poisonous_potato", new ItemStack(Items.POISONOUS_POTATO), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("porkchop", new ItemStack(Items.PORKCHOP), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("potato", new ItemStack(Items.POTATO), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("pufferfish", new ItemStack(Items.PUFFERFISH), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("pumpkin_pie", new ItemStack(Items.PUMPKIN_PIE), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("rabbit", new ItemStack(Items.RABBIT), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("rabbit_stew", new ItemStack(Items.RABBIT_STEW), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("salmon", new ItemStack(Items.SALMON), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("spider_eye", new ItemStack(Items.SPIDER_EYE), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("suspicious_stew", new ItemStack(Items.SUSPICIOUS_STEW), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("sweet_berries", new ItemStack(Items.SWEET_BERRIES), defaultItemstack, defaultTime));
+//            registerSpoiling(new SpoilInfo("tropical_fish", new ItemStack(Items.TROPICAL_FISH), defaultItemstack, defaultTime));
         }
     }
 
